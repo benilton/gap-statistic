@@ -12,7 +12,7 @@ gap_statistic <- function(data, min_num_clusters=1, max_num_clusters=10, num_ref
     mean_ref_dispersions <- ref_dispersions[ , 1]
     stddev_ref_dispersions <- ref_dispersions[ , 2]
     gaps <- mean_ref_dispersions - actual_dispersions
-    list(K=num_clusters[which.max(gaps)], gaps=gaps, gap_stddevs=stddev_ref_dispersions)
+    c(K=num_clusters[which.max(gaps)], gaps=gaps, gap_stddevs=stddev_ref_dispersions)
 }
 
 ## Calculate log(sum_i(within-cluster_i sum of squares around cluster_i
